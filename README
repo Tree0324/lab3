@@ -1,0 +1,57 @@
+/////////for lab3
+
+question A :
+
+How to compile for lab3.cpp
+
+Ans :
+
+use the command ">make" in your command window
+then lab3.exe will be created
+
+How to execute for lab3
+
+use command ">./lab3 " in your command window
+then you will see the result on yor screen
+
+P.S. if you want to rm lab3.o , just use the command "make clean"
+(these command had been written in "makefile")
+
+
+
+note :
+be sure that "makefile" and "file.in" these two are in the smae file with lab3.cpp
+
+
+/******************************************************************/
+
+question B
+
+my result for running the program under different size of "n" is listing under 
+
+		sort() 				insertion_sort()
+
+n=1000		0				0		
+n=10000		0.015				0.75
+n=100000	0.031				85.937
+n=1000000	0.422				72521.254
+
+
+explansion : 
+
+sort 所使用之演算法為 introsort(quicksort+heapsort) 其big O為O(n*log n)
+insertion sort 之big O 為 O(n^2)
+
+在資料量不大時(n<10000)，此兩種演算法所耗之時間差異並不會太大，
+但資料量超過百萬之數量級時，log n 與 n之差異會造成演算時間長度差異很大，
+以效率而言 sort()的演算法遠勝於 insertion_sort。
+驗證:
+以n=1000000 用 ( (n*logn) / 0.422 = ( n^2 / x ) 可計算出 x = 70333 此差異與時計算出來不大
+(這是假設在電腦計算量每秒固定且數列都恰好與兩者演算法平均排序次數差異不大的情形)
+
+
+但sort()也有其缺點，insertion sort 所需要之資料空間只有1，而sort卻需要至少logn (worst case is n)
+舊空間複雜度而言，sort()是比較吃記憶體空間的運算法。
+
+
+
